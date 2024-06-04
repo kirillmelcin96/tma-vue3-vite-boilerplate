@@ -1,0 +1,187 @@
+
+@import 'fonts.scss';
+
+// If browser uses light mode OR user selected light mode manually:
+:root {
+    @import 'theme-light';
+}
+
+// If browser uses light mode, BUT user selected dark mode manually:
+:root[data-theme='dark'] {
+    @import 'theme-dark';
+}
+
+// If browser uses dark mode AND user selected auto mode manually:
+@media (prefers-color-scheme: dark) {
+    [data-theme='auto'] {
+        @import 'theme-dark';
+    }
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: -apple-system, Rubik, Roboto, Ubuntu;
+    background: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-text-color);
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+    font-weight: 500;
+    margin: 0;
+}
+
+p {
+    margin: 0.2rem 0;
+}
+
+a {
+    color: var(--tg-theme-link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.router-link-no-style {
+    display: block;
+    color: inherit;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.muted {
+    opacity: .7;
+}
+
+button {
+    font-family: Rubik, Roboto, Ubuntu, Arial, sans-serif;
+    font-size: 14px;
+    outline: none;
+    appearance: none !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 2em;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s background-color;
+    transition: 0.05s transform;
+    user-select: none;
+}
+
+input {
+    appearance: none !important;
+    outline: none;
+    font-size: 14px;
+    -webkit-appearance: textfield;
+
+    &::placeholder {
+        opacity: 1;
+    }
+
+    &::-webkit-input-placeholder {
+        opacity: 1;
+    }
+
+    &::-webkit-search-cancel-button {
+        display: none;
+    }
+
+    &::-webkit-search-results-button {
+        display: none;
+    }
+
+    &::-webkit-search-decoration {
+        -webkit-appearance: none;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0;
+        /* <-- Apparently some margin are still there even though it's hidden */
+    }
+}
+
+/* Firefox */
+input[type=number] {
+    appearance: textfield !important;
+    -moz-appearance: textfield !important;
+}
+
+.content {
+    padding: 8px 16px 24px 16px;
+    max-width: 520px;
+    margin: auto;
+}
+
+.content>.card {
+    // Adding margin to card if it's the first element in the content container
+    margin-top: 12px;
+}
+
+.skeleton {
+    display: block;
+    background: var(--skeleton-bg);
+    border-radius: 10px;
+    color: transparent;
+    user-select: none;
+    pointer-events: none;
+    fill: none;
+    opacity: .05;
+
+    &--inline {
+        display: inline-flex;
+        white-space: nowrap;
+        max-width: 100%;
+        overflow: hidden;
+    }
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: var(--tg-theme-section-bg-color);
+    background-clip: border-box;
+    border: 1px solid var(--tg-theme-section-bg-color);
+    border-radius: 15px;
+    box-shadow: 0 0.5rem 1.2rem var(--tg-theme-secondary-bg-color);
+    user-select: none;
+    padding: 10px 15px;
+
+    &+& {
+        margin-top: 18px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    body {
+        -webkit-text-size-adjust: 100%;
+    }
+}

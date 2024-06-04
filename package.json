@@ -1,0 +1,30 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev-host": "vite --host",
+    "build": "vite build && cd dist/ && zip prod.zip -r .",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false npx eslint --config ./eslint.config.cjs --ext .js --ext .vue ./src",
+    "lint-autofix": "ESLINT_USE_FLAT_CONFIG=false npx eslint --config ./eslint.config.cjs --ext .js --ext .vue ./src --fix"
+  },
+  "dependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@twa-dev/sdk": "^7.0.0",
+    "axios": "^1.7.2",
+    "buffer": "^6.0.3",
+    "vue": "^3.4.21",
+    "vue-i18n": "^9.13.1",
+    "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "eslint": "^9.3.0",
+    "eslint-plugin-vue": "^9.26.0",
+    "sass": "^1.77.2",
+    "vite": "^5.2.0",
+    "vite-svg-loader": "^5.1.0"
+  }
+}
