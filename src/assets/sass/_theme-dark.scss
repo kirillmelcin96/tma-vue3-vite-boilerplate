@@ -1,13 +1,16 @@
 & {
-  --tg-theme-hint-color: #aaa;
-  --tg-theme-secondary-bg-color: #181818;
-  --tg-theme-text-color: #fff;
   --tg-theme-bg-color: #212121;
-  --tg-theme-section-bg-color: #212121;
+  --tg-theme-text-color: #fff;
+  --tg-theme-subtitle-text-color: #b8b8b8;
+  --tg-theme-hint-color: #aaa;
+  --tg-theme-link-color: #2d84ff;
   --tg-theme-button-color: #2b8cee;
   --tg-theme-button-text-color: #fff;
-  --tg-theme-link-color: #2d84ff;
-  --stroke-separator: #ffffff11;
+  --tg-theme-secondary-bg-color: #181818;
+  --tg-theme-section-header-text-color: #cfcfcf;
+  --tg-theme-section-bg-color: #212121;
+  --tg-theme-section-separator-color: #00000011;
+  --tg-theme-destructive-text-color: #f47166;
   --skeleton-bg: var(--tg-theme-hint-color);
   --input-active: var(--tg-theme-secondary-bg-color);
 }
